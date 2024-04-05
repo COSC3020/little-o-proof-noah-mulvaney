@@ -1,18 +1,13 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/wM4-KOzy)
 # Little-o
 
-In addition to the big-O, big-$\Omega$, and big-$\Theta$ notation that
-we covered at the beginning of this class, a few other notations are sometimes
-used in asymptotic analysis.  For example, "little-$o$" notation.
+Definition of little $o$: $T(n) \in o(f(n)) \iff \forall c > 0, \exists n_0, \forall n \ge n_0 : T(n) < c f(n)$  
+Definition of big $O$: $T(n) \in O(f(n)) \iff \exists c > 0, \exists n_0 > 0, \forall n \ge n_0 : T(n) \le c f(n)$
 
-Prove (i.e.\ give a formal mathematical proof) that $f(n)\in o(g(n))$ implies
-that $f(n)\in O(g(n))$.
+Prove: $T(n) \in o(f(n)) \to T(n) \in O(f(n))$  
+If $T(n) \in o(f(n))$, there exists a positive $c$ and $n_0$ such that for all $n \ge n_0$, $T(n) < c f(n)$. Using the same $c$ and $n_0$, $T(n) \le c f(n)$ must be true for all $n \ge n_0$, because if $a < b$, $a \le b$.  
+Also note, the definition of little $o$ is stricter in requiring $T(n) < c f(n)$ holds for all $c$, while big $O$ only requires there exist a $c$. If a property is true for all $c$, obviously there exists a $c$ which satisfies the same property.
 
-Hint: The proof will be *very* short and *very* easy. You can start by
-identifying the differences between the definitions of O and o.
-
-I have started with the formal definition of $o$ below. Add your answer to this
-markdown file. [This
-page](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions)
-might help with the notation for mathematical expressions.
-
-$f(n)\in o(g(n)) \iff \forall c>0, \exists n_0, \forall n\ge n_0: f(n) < c g(n)$
+Concrete example: $T(n) = n, f(n) = n^2$  
+$n \in o(n^2)$ because for $c = 1, n_0 = 2$, $n < n^2$  
+$n \in O(n^2)$ because for $c = 1, n_0 = 2$, $n \le n^2$
